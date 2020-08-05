@@ -45,36 +45,49 @@ class Cal {
         if (this.previousDisplay !== '') {
             this.compute()
         }
+        if (this.operation == '%') {
+            this.currentDisplay = parseFloat(this.currentDisplay) / 100
+        }
         this.previousDisplay = this.currentDisplay
         this.previousTextDisplay.style.transform = 'translateX(30%)'
         this.currentDisplay = ''
 
     }
     compute() {
-        let computation
-        const current = parseFloat(this.currentDisplay)
-        const prev = parseFloat(this.previousDisplay)
-        if (isNaN(current) && isNaN(prev)) return
-        switch (this.operation) {
-            case "+":
-                computation = prev + current
-                break
+            let computation
+            const current = parseFloat(this.currentDisplay)
+            const prev = parseFloat(this.previousDisplay)
+            if (isNaN(current) && isNaN(prev)) return
 
-            case "-":
-                computation = prev - current
-                break
-            case "*":
-                computation = prev * current
-                break
-            case "/":
-                computation = prev / current
-                break
 
+            switch (this.operation) {
+                case "+":
+                    computation = prev + current
+                    break
+
+                case "-":
+                    computation = prev - current
+                    break
+                case "*":
+                    computation = prev * current
+                    break
+                case "/":
+                    computation = prev / current
+                    break
+
+                default:
+                    return
+
+            }
+            this.currentDisplay = computation
+            this.previousDisplay = ''
+            this.operation = undefined
         }
-        this.currentDisplay = computation
-        this.previousDisplay = ''
-        this.operation = undefined
-    }
+        /* percent(per) {
+            this.currentDisplay = parseFloat(per) / 100
+
+
+        } */
     updateDisplay() {
         this.currentTextDisplay.innerText = this.currentDisplay
         this.previousTextDisplay.innerText = this.previousDisplay
@@ -115,3 +128,8 @@ allClrBtn.addEventListener('click', () => {
     cal.clear()
     cal.updateDisplay()
 })
+
+/* percentBtn.addEventListener('click', () => {
+    cal.percent()
+    cal.updateDisplay()
+}) */
