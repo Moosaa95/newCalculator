@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>First Calculator</title>
+</head>
+
+<body>
+
+    <div class="calculator-body">
+        <div class="result">
+            <div class="upper-result">
+                <div class="drg"><small>DEG</small></div>
+                <div class="dots">
+                    <div>.</div>
+                    <div>.</div>
+                    <div>.</div>
+                </div>
+            </div>
+            <div class="result-faces">
+                <div data-currentDisplay class="current-face">99</div>
+                <div data-previousDisplay class="prev-face">009</div>
+            </div>
+        </div>
+        <div class="buttonBtn">
+            <div class="numberBtn">
+                <button data-number>7</button>
+                <button data-number>8</button>
+                <button data-number>9</button>
+                <button data-number>4</button>
+                <button data-number>5</button>
+                <button data-number>6</button>
+                <button data-number>1</button>
+                <button data-number>2</button>
+                <button data-number>3</button>
+                <button data-number>.</button>
+                <button data-number>0</button>
+                <button data-equal>=</button>
+                <button data-clearAll class="two-life">AC</button>
+                <button data-percent>%</button>
+
+            </div>
+            <div class="operation-btn">
+                <button><span data-del>x</span></button>
+                <button data-operands>/</button>
+                <button data-operands>*</button>
+                <button data-operands>-</button>
+                <button data-operands>+</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
